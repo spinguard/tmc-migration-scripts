@@ -1,0 +1,282 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  annotations:
+    run.tanzu.vmware.com/kcp-status: '{"replicas":3,"readyReplicas":3,"version":"v1.33.6+vmware.1-fips","conditions":[{"type":"Ready","status":"True","lastTransitionTime":"2026-06-18T20:49:07Z"}]}'
+    run.tanzu.vmware.com/nodepool-status: '{"md-0":{"name":"md-0","phase":"Running","uid":"1539a88b-3a96-4fa3-a52d-10fe53320c42","creationTimestamp":"2026-06-18T18:51:09Z","updateTimestamp":"2026-06-18T18:56:01Z","resourceVersion":"79194176","replicas":3,"readyReplicas":3,"version":"v1.33.6+vmware.1-fips","conditions":[{"type":"Ready","status":"True","lastTransitionTime":"2026-06-18T18:56:01Z"}]}}'
+    run.tanzu.vmware.com/tkr-spec: H4sIAAAAAAAC/9RWXW/kNBR9318R9RXZdeJ8TCLxMFoErJYisVohsQiha/vO1ExiB9uTbffXoyTTJO2knYIQEnnL9bnH534m4b7FBgNUb6Ioig7aqCp6fxToDAb0H7BG8DicQas7dF5bU0WHCUG75jM4pNI2110MdXsL8Rsr/kAZZloDDVZRF1POaU4IOfnEZKdbT7qDo8mA26NBBwFH/NXV5OxbkLPFY72rtTlMhqNWVaR2mCiWl0SUAkmaSU6giDdEQJEBK0ouQA5oh94encQpmhPL6fbBxAeLdDi8B92gD9C0VXSVsCQnLCUJ/8jSKs2qJPs0+ius8QnaHOv60dnegcQWnbbKo7RG+QWoBoG1H1PWP108aRtfKefnFpqv2aYsv3hI4wvHQ4Veg+mr+FocTSYkGGPDkONl3IMD8fc+YEMPjir0QZsBRjw2HToirfHBgTahir5P/bvt9n366bvD2+vi5i7+5iZhH3/86c/39Qf/w823PmXb7S/y+u3dzXa73X49XGQ/G3QOd+jQSFzcTh51etfYtu8K61Y7PZqecXTe1kcf0P2sXThCfQPyVht818AeF9DTODSaFGUKmOY57gQrCoFygRqamqukzGBTkl0uUpIqyYhg6Y7wNJapjDdKsd3CR1oTnK1rdIu2Gh9RW3kYgn7oxSeQ/zLujGOSSCgLXnCWyFg9jTsDyDYCElJmckNSxktSZqUgG7ljaZLlKuPF/zDuQhUbWahCxSxPCg7iLO5MxIiC9UssJylsJClVIUgpxAYReQbi36j3Thuo9Rd0vop+/W0wNWBgj2qnsVaj1bcox7GYszMO9VfPLfD5u7CY5hedJ5juk+awtV4H6+6rqLYS6lvrQ5Uxxq5PXtpOHhikqhYRr3As9tF0HmBfRR2nGU3y39e1tHD0+E+prziN2XworUO13G5/U2hM44SySSh7rLRPeKeXXxrrB+dHC+01C4e8ajzJxWYW1oZ+M7ctyMO6EDDBIdAA5stxMWU0oZwmc3uEw57G5zf79hYdkrYj0utzkr6w7IEkuUAi2xWGoU3ZJR0HaFsyz985DaNZTuMHmnIclZ6Ln3Htj+gDkeMuIXAMt8Sj67TENXUpTS+JazA4Lf3Asq5tM0eYz9LOmfYQ8DPcE1jPVDJHmD/D4FE6DHs0F7IVl3PxNy9JarUxukW1RsLLOS7+jL+EWku71jmcUf4qCdJr0jp7d7+Wk3gmSU4F9wHC8TQJ/V+fHv94+i37VwAAAP//76+wVYELAAA=
+    tkg.tanzu.vmware.com/skip-tls-verify: ""
+    tkg.tanzu.vmware.com/tkg-http-proxy: ""
+    tkg.tanzu.vmware.com/tkg-https-proxy: ""
+    tkg.tanzu.vmware.com/tkg-ip-family: ""
+    tkg.tanzu.vmware.com/tkg-no-proxy: ""
+    tkg.tanzu.vmware.com/tkg-proxy-ca-cert: ""
+    tkg.tanzu.vmware.com/tkg-registry-additional-ca-cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lSQVBHNkREL3V4ejh4Y05OdnQ2N3VQb2t3RFFZSktvWklodmNOQVFFTEJRQXcKRkRFU01CQUdBMVVFQXhNSlNHRnlZbTl5SUVOQk1CNFhEVEkyTURReE5qRTJNalUxTTFvWERUTTJNRFF4TXpFMgpNalUxTTFvd0ZERVNNQkFHQTFVRUF4TUpTR0Z5WW05eUlFTkJNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DCkFROEFNSUlCQ2dLQ0FRRUE2ZlVjSzN4QjF2Y3JOK2RzclVWaXBkRTFvYzA0NDM0SllGL1VzWFY1UnNCSDhsZWYKMEZtQjNiZFA4WThHN0IyYjR5L3k5VHFmTHgzUG9mMWpZYXNrSmtpUTRyeWVDU1pRemlocmdSWVJub2IwT1AxdgpWZS9FbzAyODVkMlRhQWhFeWFyZklna0dPT3p2OTFucDNydStVUDJ6Qkx4eDJuR2RwK3RTMUVVYm52WXVrNUxRCnZKMm1EQXVvQ1JGWW5KaGMyc21QdkdSN1hoQTlsZFdGcmEzL1V3TkNHRFdIN3lNcFUyb3dOMHZsZXU1dENRM1cKWDcxa3FRckQzb3ZYYmVtb0FnL1pFUzhiZXY2b0VRTHRmZHpTN2dQNG91SFlwSk5RUkJqVkcyUnk0bVdsZEJLYwpLZzdTMTNnTy9kKzBFQWxveVgveDB1UVZrR0JXd0hPS3JMQVpId0lEQVFBQm8zWXdkREFPQmdOVkhROEJBZjhFCkJBTUNBZ1F3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUYKTUFNQkFmOHdIUVlEVlIwT0JCWUVGQ3N6OWJ2TU45QU9rdHBKVE9LYllqVHpqaEhBTUJNR0ExVWRFUVFNTUFxQwpDR2hoY21KdmNtTmhNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJzQXBWRzhOVzZQU1RlOGtXanZnc2srQUxhCmc1QlpKTEUrQVFrNFY1T25QQXJiemVOTWt3N0tqNndqcVdHYUQyWkVwejhGdlJHNTRVNTIyMW4xTFJpYXV0anUKNkVmVEwzZ1BwMU94aGZwMklGbU9aMEQweldxQzg5OEhVeTZEWEFzamd2SWFMSmdqQzBaMlNJMExhdmVZVk9qTApONzA3QW5BakY5SUN1Rzdod0J2S1FHQ3JTeDFOVkpvSksrbDg2WWJVM0ZpZ0ZrVG9qV3JQR1k3aVZOMmw1QWZ2CjNEODZHQlFSb1JyNHVYaXdLTjRyT3JRTHBCVWNhRS9lV0VJU0trT2RqR2RzT3psYzVLS3BsMDBiSTZNSktwbVQKVnE5TjhBQVdnY2ozR2lpL2ZOWDF5RUM5eWMyU2tKNjRrNUxNTVpQdDdvVmZ0aHNDSllpY1A0dS9vdXVYCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZTVENDQXpHZ0F3SUJBZ0lVUlQ2VnprZlZyOHkwOTdNUDYvNFhxNzBEQ2g4d0RRWUpLb1pJaHZjTkFRRUwKQlFBd0lERWVNQndHQTFVRUF3d1ZhMlY1WTJ4dllXc3ViR0ZpTVM1dGJYUnRMbUZwTUI0WERUSTJNRE15TlRFNApNelF6T1ZvWERUTTJNRE15TWpFNE16UXpPVm93SURFZU1Cd0dBMVVFQXd3VmEyVjVZMnh2WVdzdWJHRmlNUzV0CmJYUnRMbUZwTUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEFNSUlDQ2dLQ0FnRUFuajR0MFkrVlpkb0oKb29Edk4vd3lVSFRJZFg0dy9uM0dyVTRHdFJ5VDU2OExjZzY0dVFlUFNneC9pM08rdGtVeDlyS01sYVZLbXlTVQo5WVAxdkJla0J0L1RWU1FWVi8xczN1MnhpUTlYSk5GSnIyS3NNWGxpSEMzVkxzYzBMdCsrdi85UlQyRDVZZkJUCmJkRWVVTGVOSG0zUW1kSm5LMWtHYm5EdUVFRUtOKzRZSW1JOWZRNU96R3l3azRGaW9pblhMblo1SzNUZjRwRzkKZEJ1dFV1OG1jZkVCMmd4SldKZmt0UlIvWkpiWmxMTjh6NWNvZ0NQcDFSMUI3bnpjTlllcGtZeFIvZzdaMDFYawp6STdSYXl0QVBrOWlCV1lCTHBITHpBRlZUOXZRRWp6ZVpqLzcwWUtad2VhdlF2ZFR2Z1NFUUJuTjdLMnYvZkV5CjYybFVSOExvVzlLeFhic1FRRjRqYk0zWngzMEdzS2F4eFFqU3dhNWE3OTFKSmc2ckhEd1FuTnhJLzVJU3V0ODAKdUlDMzRLUWVYbDN4L1p0dUdGQmtIZG9wVTUzQXRlWU1NQ2ducFgzR0VlODFXRjFyY29OYWkva3BtS0JpMkpqdgpDN2hiU0o3SXRERjd4Nkp5cGsxUDlnQzRMemdkaXJXZGh0QkpIT3lHaFdHa3BHZllqQlhrM2RsSWt3V3hndHVZCjdobXU1TUVsZWd1aUxQVTd0Rzlqa1ZZM1krRkIwdkhEemRzVVMyYlc1Ti90Q21BWkFjSTFqTHVrN25OdlVsOGUKZHdxdmdYYjl1cjQrcDNybGFSaHRpVXV5SFhJN3RtcUtVek9HdWZSaWk1aFE1dTIzNHdVMTFHOWtiMGFRTklzYQo1ZWVNeGtEM3BHTi8rT2poclJSRkRJTHlxcjg4VzdrQ0F3RUFBYU43TUhrd0hRWURWUjBPQkJZRUZQdE1UWExxCktqZlVQK2pRSVhTc3V3NDUxdlkxTUI4R0ExVWRJd1FZTUJhQUZQdE1UWExxS2pmVVAralFJWFNzdXc0NTF2WTEKTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SmdZRFZSMFJCQjh3SFlJVmEyVjVZMnh2WVdzdWJHRmlNUzV0YlhSdApMbUZwaHdUQXFBSDlNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUNBUUJUL2czTGN5N1lwYVZuVzNQQUY4aURBNDhpCkVOQ05kcW1FYzl1QWJ0UjdBSnNET3Y2ZjVYRDd4WlNyUjZrU2xGczg5U2dkZUp3Z3pOL0cxdjRwcVFHbWFnOXUKZ3BJTWpoNklTbUcrZ0dEU2tQSHBuczY2RkoxWVRSSWtBbHdZUCtIRTdDdVZSaVpMcWJnM2tmZVhNemlzUkI2agoxTXNFMzh2RDhDVnJBbFdCcUp0bkhzMksyemNrVlRxa0FjSlhJWHpISVA4Tmd6cUY0QlZWVE9Hd2JpRlhYclA4CjhKOTZIQTBIRFVhSGxIZzRyci9PVmtBMlJYd1BTZUNnNzhLZW5IVitjeTk3OWZONHVtcUwySEtySEZjZE90VzAKVWo0SlVSN2R0SDFKRVY5bi9uN0d5SnJkQWNkMkJwcjlyanRJTHBNcUoxMEIvNlRXRGdsRjhLMnQvcUlCWnhTMApXb2JCK0crdHpIUDFvdm1uQWFwR2QzeGFmMXc1OTVDK2VjeDZTZXVkS24veXhzMUdvSDBhS290SzNTdzhwOFd5Cnd5ck9TeVdNeDNwdUxSUEh0ZXMwQThqSm9ibEdaVkdxUWVuVmhJNGVaM2o4MDRHZmZRalA5S2RBV05OakxJTEsKY2J5Y3lUNFNOQjJXcjByYWtselFJNTQwM3ZPT3ZNSlVvUjNZQytFK2VXcGRJVjhGSWtQaXRiWWNQSURzRmE2agphNmVZREtuZVNZQXJzamtiV1JsN1dwWlF3c050ZXhoOU1MWWRCOERBU2hZdVFhejB6MGdvOUZ3TVErdFg3eEswCkcxTEtlWmtwYXdFTDZYTTNoL3BGNjlRQUlSamx3RU5hMmVxeUFOLzFITytjaWl1Mzg1V2o3ckVQcnovcXVpdXgKZWkvOFpCY3REYXdDU2J6QmFRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQoKLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lSQVBHNkREL3V4ejh4Y05OdnQ2N3VQb2t3RFFZSktvWklodmNOQVFFTEJRQXcKRkRFU01CQUdBMVVFQXhNSlNHRnlZbTl5SUVOQk1CNFhEVEkyTURReE5qRTJNalUxTTFvWERUTTJNRFF4TXpFMgpNalUxTTFvd0ZERVNNQkFHQTFVRUF4TUpTR0Z5WW05eUlFTkJNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DCkFROEFNSUlCQ2dLQ0FRRUE2ZlVjSzN4QjF2Y3JOK2RzclVWaXBkRTFvYzA0NDM0SllGL1VzWFY1UnNCSDhsZWYKMEZtQjNiZFA4WThHN0IyYjR5L3k5VHFmTHgzUG9mMWpZYXNrSmtpUTRyeWVDU1pRemlocmdSWVJub2IwT1AxdgpWZS9FbzAyODVkMlRhQWhFeWFyZklna0dPT3p2OTFucDNydStVUDJ6Qkx4eDJuR2RwK3RTMUVVYm52WXVrNUxRCnZKMm1EQXVvQ1JGWW5KaGMyc21QdkdSN1hoQTlsZFdGcmEzL1V3TkNHRFdIN3lNcFUyb3dOMHZsZXU1dENRM1cKWDcxa3FRckQzb3ZYYmVtb0FnL1pFUzhiZXY2b0VRTHRmZHpTN2dQNG91SFlwSk5RUkJqVkcyUnk0bVdsZEJLYwpLZzdTMTNnTy9kKzBFQWxveVgveDB1UVZrR0JXd0hPS3JMQVpId0lEQVFBQm8zWXdkREFPQmdOVkhROEJBZjhFCkJBTUNBZ1F3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUYKTUFNQkFmOHdIUVlEVlIwT0JCWUVGQ3N6OWJ2TU45QU9rdHBKVE9LYllqVHpqaEhBTUJNR0ExVWRFUVFNTUFxQwpDR2hoY21KdmNtTmhNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJzQXBWRzhOVzZQU1RlOGtXanZnc2srQUxhCmc1QlpKTEUrQVFrNFY1T25QQXJiemVOTWt3N0tqNndqcVdHYUQyWkVwejhGdlJHNTRVNTIyMW4xTFJpYXV0anUKNkVmVEwzZ1BwMU94aGZwMklGbU9aMEQweldxQzg5OEhVeTZEWEFzamd2SWFMSmdqQzBaMlNJMExhdmVZVk9qTApONzA3QW5BakY5SUN1Rzdod0J2S1FHQ3JTeDFOVkpvSksrbDg2WWJVM0ZpZ0ZrVG9qV3JQR1k3aVZOMmw1QWZ2CjNEODZHQlFSb1JyNHVYaXdLTjRyT3JRTHBCVWNhRS9lV0VJU0trT2RqR2RzT3psYzVLS3BsMDBiSTZNSktwbVQKVnE5TjhBQVdnY2ozR2lpL2ZOWDF5RUM5eWMyU2tKNjRrNUxNTVpQdDdvVmZ0aHNDSllpY1A0dS9vdXVYCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    tkg.tanzu.vmware.com/tkg-registry-additional-skip-tls-verify: ""
+    tmc-sm.kubernetes.vmware.com/cluster: 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
+    tmc-sm.kubernetes.vmware.com/managed: "true"
+  creationTimestamp: "2026-06-18T18:51:03Z"
+  finalizers:
+  - cluster.cluster.x-k8s.io
+  - tkg.tanzu.vmware.com/addon
+  generation: 3
+  labels:
+    cluster.x-k8s.io/cluster-name: tmc
+    run.tanzu.vmware.com/tkr: v1.33.6---vmware.1-fips-vkr.2
+    topology.cluster.x-k8s.io/owned: ""
+  name: tmc
+  namespace: tmc-sm
+  resourceVersion: "79394016"
+  uid: af76d9f6-5d89-4c61-8d3a-a193d2dfb42f
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks:
+      - 172.20.0.0/16
+    serviceDomain: cluster.local
+    services:
+      cidrBlocks:
+      - 10.97.0.0/16
+  controlPlaneEndpoint:
+    host: 192.168.204.195
+    port: 6443
+  controlPlaneRef:
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+    kind: KubeadmControlPlane
+    name: tmc-76qfd
+    namespace: tmc-sm
+  infrastructureRef:
+    apiVersion: vmware.infrastructure.cluster.x-k8s.io/v1beta1
+    kind: VSphereCluster
+    name: tmc-k5snk
+    namespace: tmc-sm
+  topology:
+    class: builtin-generic-v3.4.0
+    classNamespace: vmware-system-vks-public
+    controlPlane:
+      metadata: {}
+      replicas: 3
+      variables:
+        overrides:
+        - name: vmClass
+          value: best-effort-large
+        - name: volumes
+          value:
+          - capacity: 40G
+            mountPath: /var/lib/containerd
+            name: containerd
+            storageClass: workload-storage-policy
+    variables:
+    - name: node
+      value:
+        labels:
+          checksum.tmc-sm.kubernetes.vmware.com/trust: 6f2ab6a94ef7c3db6e3abd46bd6663fdf57a192e
+    - name: volumes
+      value: []
+    - name: storageClass
+      value: workload-storage-policy
+    - name: vmClass
+      value: ""
+    - name: osConfiguration
+      value:
+        trust:
+          additionalTrustedCAs:
+          - caCert:
+              secretRef:
+                key: tmc-sm
+                name: tmc-user-trusted-ca-secret
+    - name: vsphereOptions
+      value:
+        persistentVolumes:
+          defaultStorageClass: workload-storage-policy
+    - name: kubernetes
+      value:
+        certificateRotation:
+          enabled: true
+          renewalDaysBeforeExpiry: 90
+    version: v1.33.6+vmware.1-fips
+    workers:
+      machineDeployments:
+      - class: node-pool
+        metadata: {}
+        name: md-0
+        replicas: 3
+        variables:
+          overrides:
+          - name: vmClass
+            value: best-effort-large
+          - name: volumes
+            value:
+            - capacity: 40G
+              mountPath: /var/lib/containerd
+              name: containerd
+              storageClass: workload-storage-policy
+status:
+  conditions:
+  - lastTransitionTime: "2026-06-18T20:49:08Z"
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2026-06-18T18:53:21Z"
+    status: "True"
+    type: CloudProviderReconciled
+  - lastTransitionTime: "2026-06-18T18:53:00Z"
+    status: "True"
+    type: ControlPlaneInitialized
+  - lastTransitionTime: "2026-06-18T20:49:08Z"
+    status: "True"
+    type: ControlPlaneReady
+  - lastTransitionTime: "2026-06-18T18:52:58Z"
+    status: "True"
+    type: DNSReconciled
+  - lastTransitionTime: "2026-06-18T18:51:19Z"
+    status: "True"
+    type: InfrastructureReady
+  - lastTransitionTime: "2026-06-18T18:52:58Z"
+    status: "True"
+    type: KubeProxyReconciled
+  - lastTransitionTime: "2026-06-18T21:37:18Z"
+    status: "True"
+    type: NetworkProviderReconciled
+  - lastTransitionTime: "2026-06-18T18:53:44Z"
+    status: "True"
+    type: SSOReconciled
+  - lastTransitionTime: "2026-06-18T18:54:26Z"
+    status: "True"
+    type: StorageProviderReconciled
+  - lastTransitionTime: "2026-06-18T18:56:07Z"
+    status: "True"
+    type: TopologyReconciled
+  - lastTransitionTime: "2026-06-18T18:51:03Z"
+    reason: AlreadyUpToDate
+    severity: Info
+    status: "False"
+    type: UpdatesAvailable
+  controlPlaneReady: true
+  failureDomains:
+    domain-c9:
+      controlPlane: true
+  infrastructureReady: true
+  observedGeneration: 3
+  phase: Provisioned
+  v1beta2:
+    conditions:
+    - lastTransitionTime: "2026-06-18T21:34:07Z"
+      message: ""
+      observedGeneration: 3
+      reason: Available
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2026-06-18T18:55:41Z"
+      message: ""
+      observedGeneration: 3
+      reason: ProbeSucceeded
+      status: "True"
+      type: RemoteConnectionProbe
+    - lastTransitionTime: "2026-06-18T18:55:42Z"
+      message: ""
+      observedGeneration: 3
+      reason: Ready
+      status: "True"
+      type: InfrastructureReady
+    - lastTransitionTime: "2026-06-18T18:52:59Z"
+      message: ""
+      observedGeneration: 3
+      reason: Initialized
+      status: "True"
+      type: ControlPlaneInitialized
+    - lastTransitionTime: "2026-06-18T21:34:06Z"
+      message: ""
+      observedGeneration: 3
+      reason: Available
+      status: "True"
+      type: ControlPlaneAvailable
+    - lastTransitionTime: "2026-06-18T18:56:01Z"
+      message: ""
+      observedGeneration: 3
+      reason: Available
+      status: "True"
+      type: WorkersAvailable
+    - lastTransitionTime: "2026-06-18T18:56:07Z"
+      message: ""
+      observedGeneration: 3
+      reason: ReconcileSucceeded
+      status: "True"
+      type: TopologyReconciled
+    - lastTransitionTime: "2026-06-18T18:51:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotRollingOut
+      status: "False"
+      type: RollingOut
+    - lastTransitionTime: "2026-06-18T18:51:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotRemediating
+      status: "False"
+      type: Remediating
+    - lastTransitionTime: "2026-06-18T18:51:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotScalingDown
+      status: "False"
+      type: ScalingDown
+    - lastTransitionTime: "2026-06-18T18:56:36Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotScalingUp
+      status: "False"
+      type: ScalingUp
+    - lastTransitionTime: "2026-06-18T21:34:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: Ready
+      status: "True"
+      type: ControlPlaneMachinesReady
+    - lastTransitionTime: "2026-06-18T18:56:01Z"
+      message: ""
+      observedGeneration: 3
+      reason: Ready
+      status: "True"
+      type: WorkerMachinesReady
+    - lastTransitionTime: "2026-06-18T18:51:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: UpToDate
+      status: "True"
+      type: ControlPlaneMachinesUpToDate
+    - lastTransitionTime: "2026-06-18T18:51:09Z"
+      message: ""
+      observedGeneration: 3
+      reason: UpToDate
+      status: "True"
+      type: WorkerMachinesUpToDate
+    - lastTransitionTime: "2026-06-18T21:37:18Z"
+      message: ""
+      observedGeneration: 3
+      reason: ReconcileSucceeded
+      status: "True"
+      type: AddonsReconciled
+    - lastTransitionTime: "2026-06-18T18:51:03Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotPaused
+      status: "False"
+      type: Paused
+    - lastTransitionTime: "2026-06-18T18:51:03Z"
+      message: ""
+      observedGeneration: 3
+      reason: NotDeleting
+      status: "False"
+      type: Deleting
+    controlPlane:
+      availableReplicas: 3
+      desiredReplicas: 3
+      readyReplicas: 3
+      replicas: 3
+      upToDateReplicas: 3
+    workers:
+      availableReplicas: 3
+      desiredReplicas: 3
+      readyReplicas: 3
+      replicas: 3
+      upToDateReplicas: 3

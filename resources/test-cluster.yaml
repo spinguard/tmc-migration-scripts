@@ -1,0 +1,61 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: test
+  namespace: tmc-sm
+spec:
+  clusterNetwork:
+    pods:
+      cidrBlocks:
+      - 100.67.0.0/16
+    serviceDomain: cluster.local
+    services:
+      cidrBlocks:
+      - 10.97.0.0/16
+  controlPlaneEndpoint:
+    host: 192.168.204.195
+    port: 6443
+  topology:
+    class: builtin-generic-v3.4.0
+    classNamespace: vmware-system-vks-public
+    controlPlane:
+      metadata: {}
+      replicas: 1
+      variables:
+        overrides:
+        - name: vmClass
+          value: best-effort-large
+        - name: volumes
+          value:
+          - capacity: 40G
+            mountPath: /var/lib/containerd
+            name: containerd
+            storageClass: workload-storage-policy
+    variables:
+    - name: volumes
+      value: []
+    - name: storageClass
+      value: workload-storage-policy
+    - name: vmClass
+      value: ""
+    - name: vsphereOptions
+      value:
+        persistentVolumes:
+          defaultStorageClass: workload-storage-policy
+    version: v1.33.6+vmware.1-fips
+    workers:
+      machineDeployments:
+      - class: node-pool
+        metadata: {}
+        name: md-0
+        replicas: 1
+        variables:
+          overrides:
+          - name: vmClass
+            value: best-effort-large
+          - name: volumes
+            value:
+            - capacity: 40G
+              mountPath: /var/lib/containerd
+              name: containerd
+              storageClass: workload-storage-policy
